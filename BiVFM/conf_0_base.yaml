@@ -1,0 +1,75 @@
+# 项目根目录
+base_dir: '../demo_work1'
+
+# 日志保存路径, base_dir/info_path
+info_path: 'log_0'
+
+# AutoOLGAFleet output dir
+autoolga_output_dir: 'mech_case/auto_generate'
+
+# 从多少轮开始训练
+continue_epoch: 0
+load_model: True
+# MPFNet, TCN, LSTM
+model_name: MPFNet
+
+
+# 输入输出通道
+input_channels: 5
+output_channels: 4
+
+
+num_epoch: 5000  # 训练轮次
+batch_size: 128  # 批次大小
+
+
+# 训练集与测试集切分比例
+ratio: 0.8
+
+# x输入时间窗口长度
+x_length: 187
+# y输出时间窗口长度
+# y_length: 187
+y_length: 1
+
+# Time drop sampling
+resample_time: '2S'
+
+learning_rate: 2e-4
+
+# ========================== 不常修改的配置 ==========================
+
+
+# ========================== Directory ==========================
+
+# 从原始csv提取哪些列作为x和y
+extract_xy: 'dataset/feature_extractor.xlsx'
+
+# 原始tpl集合
+tpl_dir: 'dataset/dataset_0_tpl'
+# 原始tpl提取出的csv集合
+raw_csv_dir: 'dataset/dataset_1_csv'
+# 准备训练的xy数据csv文件
+xy_dir: 'dataset/dataset_2_xy'
+# pkl二进制文件
+pkl_dir: 'dataset/dataset_3_pkl'
+
+
+# 数据集统计信息，已弃用
+mean_path: 'dataset/global_params/all_mean.pkl'
+std_path: 'dataset/global_params/all_std.pkl'
+
+
+# 日志txt保存路径
+train_log_file: 'log_txt/log_train.txt'
+other_log_file: 'log_txt/log_other.txt'
+# 预测图片保存路径
+save_path: 'log_imgs'
+# 实验保存图形的输出路径
+img_save_path: 'imgs_save'
+
+
+# 优化器保存路径（基本用不到）
+opt_path: "save_dir/opt.pdopts"
+# 模型保存路径
+model_path: 'save_dir/net.pdparams'
